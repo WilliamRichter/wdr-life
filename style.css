@@ -1,0 +1,65 @@
+.hero {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #f7f4ef;
+  color: #111;
+  text-align: center;
+}
+
+.line {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.world {
+  font-size: 90px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  animation-delay: 0.3s;
+}
+
+.of {
+  font-size: 32px;
+  font-style: italic;
+  margin: 20px 0;
+  animation-delay: 1.3s;
+}
+
+.signature {
+  width: min(700px, 90vw);
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+  animation-delay: 2.2s;
+}
+
+.sig-text {
+  font-family: "Brush Script MT", cursive;
+  font-size: 90px;
+
+  fill: none;
+  stroke: #111;
+  stroke-width: 1.6;
+
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+
+  animation: writeSignature 3s ease forwards;
+  animation-delay: 2.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes writeSignature {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
