@@ -3,257 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>William's Website</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Signature font -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-
+  <title>WDR.life</title>
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --sun-washed-yellow: #f1c95b;
+      --warm-cream: #fff7e6;
+      --soft-charcoal: #2f2a24;
+      --muted-brown: #6d5f4f;
+      --olive: #7b8460;
+      --line: rgba(47, 42, 36, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #222;
-      background: #f7f7f7;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(17,17,17,0.9);
-      backdrop-filter: blur(10px);
-      padding: 15px 30px;
-      box-sizing: border-box;
-      z-index: 1000;
-
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd166;
-    }
-
-    section {
       min-height: 100vh;
-      padding: 100px 40px 40px;
-      box-sizing: border-box;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffe7a0 0%, var(--sun-washed-yellow) 34%, #e8b94d 100%);
+      color: var(--soft-charcoal);
+      line-height: 1.5;
     }
 
-    /* HERO */
-
-    .hero {
-      background:
-        linear-gradient(
-          135deg,
-          #0f172a,
-          #1e293b,
-          #334155
-        );
-
-      color: white;
-
+    .page {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      padding: 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .line {
-      opacity: 0;
-      animation: fadeIn 1.2s ease forwards;
-    }
-
-    .world {
-      font-size: clamp(60px, 12vw, 140px);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      animation-delay: 0.3s;
-    }
-
-    .of {
-      font-size: clamp(22px, 3vw, 40px);
-      font-style: italic;
-      margin: 10px 0 20px;
-      animation-delay: 1.2s;
-    }
-
-    .signature {
-      width: min(800px, 90vw);
-      opacity: 0;
-
-      animation:
-        fadeIn 0.5s ease forwards;
-
-      animation-delay: 2.1s;
-    }
-
-    .sig-text {
-      font-family: 'Great Vibes', cursive;
-      font-size: 120px;
-
-      fill: none;
-      stroke: white;
-      stroke-width: 1.3;
-
-      stroke-dasharray: 1400;
-      stroke-dashoffset: 1400;
-
-      animation: writeSignature 3.5s ease forwards;
-      animation-delay: 2.3s;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes writeSignature {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    /* CONTENT */
-
-    .content {
-      max-width: 900px;
+      max-width: 1120px;
+      width: 100%;
       margin: 0 auto;
     }
 
-    .card {
-      background: white;
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 16px;
+    .logo {
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      font-size: 1.25rem;
+    }
 
-      box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
+    nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--soft-charcoal);
+      text-decoration: none;
+      opacity: 0.78;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 96px 0 72px;
+    }
+
+    .hero {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--muted-brown);
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3.2rem, 9vw, 7.8rem);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+      font-weight: 750;
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      max-width: 590px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--muted-brown);
+    }
+
+    .card {
+      background: rgba(255, 247, 230, 0.64);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 24px 80px rgba(72, 49, 15, 0.14);
+      backdrop-filter: blur(18px);
+    }
+
+    .card p {
+      color: var(--muted-brown);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .card strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--soft-charcoal);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 247, 230, 0.6);
+      border: 1px solid var(--line);
+      font-size: 0.9rem;
+      color: var(--muted-brown);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--olive);
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      color: white;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.9rem;
+      color: var(--muted-brown);
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        padding: 22px;
+      }
+
+      header,
+      footer {
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      main {
+        padding: 72px 0 48px;
+        place-items: start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      h1 {
+        font-size: clamp(3.4rem, 18vw, 5.8rem);
+      }
+
+      footer {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="page">
+    <header>
+      <div class="logo">WDR.life</div>
+      <nav aria-label="Main navigation">
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Writing</a>
+        <a href="#">Now</a>
+      </nav>
+    </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Personal website / ongoing experiment</p>
+          <h1 id="hero-title">A warm place for systems, stories, and unfinished ideas.</h1>
+          <p class="intro">
+            Hi, I’m William. I build things, think about models, run longer than necessary,
+            and occasionally try to make sense of it all on the internet.
+          </p>
+        </div>
 
-  <!-- HERO -->
+        <aside class="card" aria-label="Current status">
+          <strong>Currently</strong>
+          <p>
+            Designing this site as a small Mediterranean-yellow corner of the web:
+            clean, honest, slightly agile, and hopefully not too pleased with itself.
+          </p>
+          <div class="status">
+            <span class="dot"></span>
+            Work in progress, naturally
+          </div>
+        </aside>
+      </section>
+    </main>
 
-  <section id="home" class="hero">
-
-    <div class="line world">
-      WORLD
-    </div>
-
-    <div class="line of">
-      of
-    </div>
-
-    <svg class="signature" viewBox="0 0 900 200">
-      <text x="40" y="140" class="sig-text">
-        William Richter
-      </text>
-    </svg>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-    <div class="content">
-
-      <h2>About</h2>
-
-      <div class="card">
-        <p>
-          This section is about me. You can write who you are,
-          what you do, what you are interested in,
-          or what this website is for.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-
-  <section id="projects">
-    <div class="content">
-
-      <h2>Projects</h2>
-
-      <div class="card">
-        <h3>Project 1</h3>
-        <p>Description of your first project.</p>
-      </div>
-
-      <div class="card">
-        <h3>Project 2</h3>
-        <p>Description of your second project.</p>
-      </div>
-
-      <div class="card">
-        <h3>Project 3</h3>
-        <p>Description of your third project.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-    <div class="content">
-
-      <h2>Contact</h2>
-
-      <div class="card">
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: Add your LinkedIn link here</p>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    © 2026 William Richter
-  </footer>
-
+    <footer>
+      <span>Built slowly. Updated irregularly. Probably overthought.</span>
+      <span>© WDR</span>
+    </footer>
+  </div>
 </body>
 </html>
