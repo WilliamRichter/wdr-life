@@ -254,7 +254,7 @@
       transform: translateY(-1px);
     }
 
-    .intro {
+    .cv-intro {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 64px;
