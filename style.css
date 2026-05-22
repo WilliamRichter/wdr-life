@@ -256,7 +256,7 @@
 
     .intro {
       display: grid;
-      grid-template-columns: 1.1fr 1.1fr;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 64px;
       align-items: end;
       margin-bottom: 48px;
